@@ -7,15 +7,15 @@ const { Node } = require("../extensions/list-tree.js");
  */
 class BinarySearchTree {
   constructor() {
-    this.root = null;
+    this.rootNode = null;
   }
 
   root() {
-    return this.root;
+    return this.rootNode;
   }
 
   add(data) {
-    this.root = addNode(this.root, data);
+    this.rootNode = addNode(this.rootNode, data);
 
     function addNode(node, value) {
       if (!node) {
@@ -37,7 +37,7 @@ class BinarySearchTree {
   }
 
   find(data) {
-    let current = this.root;
+    let current = this.rootNode;
 
     while (current) {
       if (current.data === data) {
@@ -95,11 +95,11 @@ class BinarySearchTree {
       return node;
     }
 
-    this.root = removeNode(this.root, data);
+    this.rootNode = removeNode(this.rootNode, data);
   }
 
   min() {
-    let current = this.root;
+    let current = this.rootNode;
 
     if (current) {
       while (current.left) {
@@ -113,7 +113,7 @@ class BinarySearchTree {
   }
 
   max() {
-    let current = this.root;
+    let current = this.rootNode;
 
     if (current) {
       while (current.right) {
